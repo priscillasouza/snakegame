@@ -13,6 +13,11 @@ let food = {
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
+let food2 = {
+    x: Math.floor(Math.random() * 15 + 1) * box,
+    y: Math.floor(Math.random() * 15 + 1) * box
+}
+
 function criarBG() {
     context.fillStyle = "lightgreen"; 
     context.fillRect(0, 0, 16 * box, 16 * box); 
@@ -28,6 +33,11 @@ function createSnake() {
 function drawFood() {
     context.fillStyle = "red";
     context.fillRect(food.x, food.y, box, box);
+}
+
+function drawFood2() {
+    context.fillStyle = "orange";
+    context.fillRect(food2.x, food2.y, box, box);
 }
 
 document.addEventListener('keydown', update);
@@ -56,6 +66,7 @@ function iniciarJogo() {
     criarBG();
     createSnake();
     drawFood();
+    drawFood2();
     
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
